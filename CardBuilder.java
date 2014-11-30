@@ -40,12 +40,12 @@ public class CardBuilder {
 		aScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		aScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);	
 
-		JButton nextButton = new JButton("Следующая карточка");
+		JButton nextButton = new JButton("РЎР»РµРґСѓСЋС‰Р°СЏ РєР°СЂС‚РѕС‡РєР°");
 		
 		cardList = new ArrayList<Card>();
 		
-		JLabel qLabel = new JLabel("Вопрос:");
-		JLabel aLabel = new JLabel("Ответ:");
+		JLabel qLabel = new JLabel("Р’РѕРїСЂРѕСЃ:");
+		JLabel aLabel = new JLabel("РћС‚РІРµС‚:");
 		
 		mainPanel.add(qLabel);
 		mainPanel.add(qScroller);
@@ -54,9 +54,9 @@ public class CardBuilder {
 		mainPanel.add(nextButton);
 		nextButton.addActionListener(new NextCardListener());
 		JMenuBar menuBar = new JMenuBar();
-		JMenu fileMenu = new JMenu("Файл");
-		JMenuItem newMenuItem = new JMenuItem("Новая тема");
-		JMenuItem saveMenuItem = new JMenuItem("Сохранить");
+		JMenu fileMenu = new JMenu("Р¤Р°Р№Р»");
+		JMenuItem newMenuItem = new JMenuItem("РќРѕРІР°СЏ С‚РµРјР°");
+		JMenuItem saveMenuItem = new JMenuItem("РЎРѕС…СЂР°РЅРёС‚СЊ");
 		fileMenu.add(newMenuItem);
 		fileMenu.add(saveMenuItem);
 		menuBar.add(fileMenu);
@@ -87,7 +87,6 @@ public class CardBuilder {
 			JFileChooser fileSave = new JFileChooser();
 			fileSave.showSaveDialog(frame);
 			saveFile(fileSave.getSelectedFile());
-			System.out.println("Save Card list to file - OK.");
 		}
 	}
 	
@@ -107,6 +106,7 @@ public class CardBuilder {
 				writer.write(card.getAnswer() + "\n");
 			}
 			writer.close();
+			System.out.println("Save Card list to file (" + file.getAbsolutePath() + ") - OK.");
 		} catch(IOException ex) {
 			System.out.println("Couldn't write cardList to File");
 			ex.printStackTrace();

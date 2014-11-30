@@ -18,6 +18,6 @@ public class Card implements Serializable {
 	}
 	
 	public String toString() {
-		return "Вопрос: " + question + "\nОтвет: " + answer;
+		return "Р’РѕРїСЂРѕСЃ: " + question + "\nРћС‚РІРµС‚: " + answer;
 	}
 }
